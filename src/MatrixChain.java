@@ -15,6 +15,7 @@ public class MatrixChain {
         public int[][] splitTable;
         public String parenthesization;
         public long naiveCost;
+        public long executionTimeNs = 0;
     }
 
     /**
@@ -22,6 +23,7 @@ public class MatrixChain {
      * @param p Array of dimensions: Matrix i has dimension p[i-1] x p[i]
      */
     public static Result compute(int[] p) {
+        long startTime = System.nanoTime();
         Result res = new Result();
         int n = p.length - 1; // Number of matrices
 
@@ -61,6 +63,7 @@ public class MatrixChain {
         res.splitTable = s;
         res.naiveCost = naive;
         res.parenthesization = buildParentheses(s, 1, n);
+        res.executionTimeNs = System.nanoTime() - startTime;
 
         return res;
     }

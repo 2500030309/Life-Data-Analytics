@@ -77,7 +77,16 @@ public class AhoCorasick {
 
     public static class MatchResult {
         public Map<String, List<Integer>> keywordPositions = new LinkedHashMap<>();
+        public long transitions = 0;
         public long executionTimeNs = 0;
+
+        public int getTotalMatches() {
+            int total = 0;
+            for (List<Integer> list : keywordPositions.values()) {
+                total += list.size();
+            }
+            return total;
+        }
     }
 
     /**
@@ -100,6 +109,7 @@ public class AhoCorasick {
             char ch = Character.toLowerCase(text.charAt(i));
 
             while (current != null && !current.children.containsKey(ch)) {
+                result.transitions++;
                 current = current.fail;
             }
 
@@ -108,6 +118,7 @@ public class AhoCorasick {
                 continue;
             }
 
+            result.transitions++;
             current = current.children.get(ch);
 
             for (String matchedWord : current.outputs) {

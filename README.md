@@ -1,10 +1,11 @@
 # LifeData – Large-Scale Personal Data Analytics Platform
-### A Java-based Data Structures and Algorithms (DSA) Project for Review-1 (CO1 – CO3)
+### A Java-based Data Structures and Algorithms (DSA) Platform for Final Review (CO1 – CO3)
+**Now with Desktop Graphical User Interface (GUI), Category-Specific Benchmarking & Anti-Aliased Bar Graphs**
 
 ---
 
 ## 1. Project Title
-**LifeData – Large-Scale Personal Data Analytics Platform**
+**LifeData – Large-Scale Personal Data Analytics Platform (GUI & CLI Studio)**
 
 ## 2. Problem Statement
 With the rapid proliferation of personal wearable devices, mobile health sensors, fitness trackers, and digital journaling apps, individuals generate large volumes of continuous heterogeneous personal data:
@@ -17,13 +18,17 @@ Conventional software approaches relying on brute-force searches or high-level l
 
 **LifeData** bridges this gap by directly implementing foundational and advanced Data Structures & Algorithms (DSA) to demonstrate efficient data searching, indexing, comparison, and combinatorial optimization.
 
-## 3. Objectives
-1. **Interactive Runtime Processing:** Allow the user to input personal records and query terms dynamically at runtime using `Scanner`.
-2. **File-Driven Text Analytics:** Load real-world continuous data streams from external `.txt` files and execute manual string algorithms directly on the text.
-3. **Module 1 (CO1/CO2) – String Matching:** Implement Naive Search, KMP with LPS array, Z-Algorithm with Z-boxes, Rabin-Karp with rolling polynomial hash, and Aho-Corasick with Trie and failure links.
-4. **Module 2 (CO2) – Suffix Structures:** Construct Suffix Arrays, compute Kasai's linear-time LCP array, and perform binary search substring queries.
-5. **Module 3 (CO3) – Advanced Dynamic Programming:** Implement Levenshtein, Damerau-Levenshtein (transposition), Weighted Edit Distance, Needleman-Wunsch (global alignment), Smith-Waterman (local alignment), Bitmask DP (activity selection), and Matrix Chain Multiplication (pipeline parenthesization).
-6. **Empirical Benchmarking & Big-O Rigor:** Verify time and space complexity and measure execution time in nanoseconds.
+## 3. Key Enhancements for Final Review
+1. **Interactive Desktop GUI Studio (`LifeDataGUI.java`):** Built entirely in pure standard Java (zero external libraries), featuring a modern dark-slate theme, tabbed navigation, and interactive verification controls.
+2. **Category-Specific Algorithm Benchmarking:** Solves the "apples-to-oranges" comparison fallacy by strictly grouping and comparing algorithms within their respective theoretical problem domains:
+   - **Category 1: Exact String Pattern Matchers** (Naive vs KMP vs Z-Algorithm vs Rabin-Karp vs Aho-Corasick)
+   - **Category 2: Sequence Distance & Alignment Measures** (Levenshtein vs Damerau-Levenshtein vs Weighted Edit Distance vs Needleman-Wunsch vs Smith-Waterman)
+   - **Category 3: Suffix Structures & Indexing** (Suffix Array & Kasai LCP vs Scan-Based Matchers on repeated query batches)
+   - **Category 4: Combinatorial DP & Optimization** (Bitmask Activity Selection vs Matrix Chain Pipeline Optimization)
+3. **Anti-Aliased Bar Graph Engine (`BarChartPanel.java`):** Custom 2D graphics rendering with auto-scaling Y-axes, smooth gradients, value tags, and multi-metric toggle dropdowns (Execution Time, Operations/Comparisons, Match Counts).
+4. **Personal Records Manager:** In-memory record management with CRUD operations, search filters, and one-click data pipeline forwarding.
+5. **Final Review Viva Dashboard & Report Exporter:** Master 15-algorithm complexity matrix, examiner viva Q&A guide, and one-click export to `LifeData_Final_Review_Report.md`.
+6. **Dual Execution Modes:** Runs seamlessly as a desktop GUI or as an interactive CLI (`--cli`).
 
 ---
 
@@ -32,35 +37,40 @@ Conventional software approaches relying on brute-force searches or high-level l
 ```
 +-----------------------------------------------------------------------------------+
 |                        LIFEDATA ANALYTICS PLATFORM                                |
+|        [Modern Desktop GUI Studio]   <--->   [Interactive Console CLI]            |
 +-----------------------------------------------------------------------------------+
                                       │
                         ┌─────────────┴─────────────┐
                         ▼                           ▼
-            [Runtime Scanner Input]        [External TXT Files]
-            - Record fields                 - data/personal_notes.txt
-            - User query strings            - data/activity_records.txt
-            - DP sequence inputs            - data/event_records.txt
-            - Matrix dimensions             - data/sample_large_text.txt
+            [Interactive GUI Inputs]       [External TXT Files]
+            - Record form fields            - data/personal_notes.txt
+            - Query pattern & keywords      - data/activity_records.txt
+            - Typo & Alignment strings      - data/event_records.txt
+            - Matrix dims & Activity DP     - data/sample_large_text.txt
                         │                           │
                         └─────────────┬─────────────┘
                                       │
        ┌──────────────────────────────┼──────────────────────────────┐
        ▼                              ▼                              ▼
- [MODULE 1: STRINGS]        [MODULE 2: SUFFIXES]            [MODULE 3: ADVANCED DP]
- - Naive (O(nm))            - Suffix Array (Sort/Doubling) - Levenshtein (O(nm))
- - KMP (O(n+m), LPS)        - Kasai LCP (O(n))             - Damerau-Levenshtein (Transposition)
- - Z-Algo (O(n+m), Z-array) - Suffix Substring Search      - Weighted Edit Distance (QWERTY)
- - Rabin-Karp (Rolling Hash)  via Binary Search            - Needleman-Wunsch (Global)
- - Aho-Corasick (Trie/AC)     (O(m log n))                 - Smith-Waterman (Local)
-                                                           - Bitmask DP (O(2^N * N))
-                                                           - Matrix Chain (O(n^3))
+ [CAT 1: STRING MATCHING]       [CAT 2: DISTANCE & ALIGN]      [CAT 3: SUFFIX INDEXING]
+ - Naive Search (O(nm))         - Levenshtein (Wagner-Fischer) - Suffix Array (O(n² log n))
+ - KMP (O(n+m), LPS array)      - Damerau-Levenshtein          - Kasai LCP (O(n))
+ - Z-Algo (O(n+m), Z-boxes)       (Adjacent Transpositions)    - Suffix Binary Search
+ - Rabin-Karp (Rolling Hash)    - Weighted Edit Distance         (O(m log n) queries)
+ - Aho-Corasick (Trie + BFS)    - Needleman-Wunsch (Global)
+                                - Smith-Waterman (Local)
                                       │
                                       ▼
-                        [EVALUATION & VERIFICATION]
-                        - Matching offsets & counts
-                        - Intermediate DP / LPS / Z tables
-                        - Execution time (nanoseconds)
-                        - Viva Q&A & Complexity Matrix
+                        [CAT 4: DP & OPTIMIZATION]
+                        - Bitmask DP (O(2^N · N), Subsets)
+                        - Matrix Chain Mult (O(N³), MCM)
+                                      │
+                                      ▼
+             [REAL-TIME BAR GRAPH & COMPARATIVE EVALUATION]
+             - Execution Time Bar Chart (Nanoseconds)
+             - Operation & Comparison Counts Bar Chart
+             - Match & Score Correctness Verification
+             - Final Review Viva Studio & Markdown Exporter
 ```
 
 ---
@@ -68,18 +78,11 @@ Conventional software approaches relying on brute-force searches or high-level l
 ## 5. Functional & Non-Functional Requirements
 
 ### Functional Requirements
-1. **Dynamic Console Menu:** 19 options supporting individual feature testing, record creation, algorithm execution, and complexity analysis.
-2. **Text Source Flexibility:** Ability to run string and suffix algorithms on:
-   - External `.txt` files
-   - User runtime entered strings
-   - In-memory personal records
-3. **Intermediate Visualization:** Display LPS tables, Z-arrays, suffix sorted rankings, LCP values, alignment strings, and 2D DP cost matrices.
-4. **Manual DSA Implementations:** No usage of `String.contains()`, `String.indexOf()`, or built-in regex search for matching algorithms.
-
-### Non-Functional Requirements
-1. **Clean Code & Beginner Friendly:** Pure standard Java without external libraries; easy to explain in a viva review.
-2. **Deterministic Correctness:** Handles edge cases (empty strings, pattern longer than text, single-character matches).
-3. **Zero Configuration:** Compiles with standard `javac` and runs on any Java 8+ environment.
+1. **Interactive GUI & Console CLI:** Choose between full desktop graphical studio or interactive console terminal.
+2. **Category-Specific Benchmarks:** Side-by-side bar graph comparisons within identical algorithm classes.
+3. **Data Source Flexibility:** Run algorithms on external `.txt` files, typed runtime text, or in-memory personal records.
+4. **Intermediate Inspection:** Display LPS tables, Z-arrays, suffix sorted rankings, LCP values, alignment strings, and 2D DP cost matrices.
+5. **Zero External Dependencies:** 100% pure standard Java (`javax.swing`, `java.awt`, `java.util`, `java.io`).
 
 ---
 
@@ -87,27 +90,27 @@ Conventional software approaches relying on brute-force searches or high-level l
 
 | Module | Algorithm | LifeData Use Case | Time Complexity | Space Complexity |
 | :--- | :--- | :--- | :--- | :--- |
-| **M1** | **Naive Search** | Baseline comparative search for health terms in logs | $O(n \cdot m)$ | $O(1)$ |
-| **M1** | **KMP Search** | Exact keyword search in personal notes without text pointer backtracking | $O(n + m)$ | $O(m)$ |
-| **M1** | **Z-Algorithm** | Identifies periodic telemetry cycles and repeated patterns in sensor logs | $O(n + m)$ | $O(n + m)$ |
-| **M1** | **Rabin-Karp** | Fast single & multi-record ID lookups via polynomial rolling hash | $O(n + m)$ avg | $O(1)$ |
-| **M1** | **Aho-Corasick** | Real-time simultaneous multi-keyword tagging across activity streams | $O(n + z)$ | $O(\Sigma \cdot m)$ |
-| **M2** | **Suffix Array** | Lexicographical indexing of large collections of notes for fast queries | $O(n^2 \log n)$ | $O(n)$ |
-| **M2** | **Kasai LCP** | Identifies recurrent phrases and clinical recommendations across records | $O(n)$ | $O(n)$ |
-| **M2** | **Suffix Search** | Substring existence checks via binary search over sorted suffixes | $O(m \log n)$ | $O(1)$ |
-| **M3** | **Levenshtein** | Wagner-Fischer edit distance for typo tolerance in user queries | $O(n \cdot m)$ | $O(n \cdot m)$ |
-| **M3** | **Damerau-Levenshtein** | Adjacent transposition-aware distance for touchscreen/keyboard typos | $O(n \cdot m)$ | $O(n \cdot m)$ |
-| **M3** | **Weighted Edit Distance**| Non-uniform costs for asymmetric user data-entry errors | $O(n \cdot m)$ | $O(n \cdot m)$ |
-| **M3** | **Needleman-Wunsch** | End-to-end global sequence alignment of activity streams | $O(n \cdot m)$ | $O(n \cdot m)$ |
-| **M3** | **Smith-Waterman** | Local region alignment to discover common behavioral episodes | $O(n \cdot m)$ | $O(n \cdot m)$ |
-| **M3** | **Bitmask DP** | Explores combinations of user activities subject to time & stamina budgets | $O(2^N \cdot N)$ | $O(2^N)$ |
-| **M3** | **Matrix Chain Mult** | Optimizes evaluation order for multi-stage sensor processing pipelines | $O(n^3)$ | $O(n^2)$ |
+| **Cat 1** | **Naive Search** | Baseline comparative search for health terms in logs | $O(n \cdot m)$ | $O(1)$ |
+| **Cat 1** | **KMP Search** | Exact keyword search in personal notes without text pointer backtracking | $O(n + m)$ | $O(m)$ |
+| **Cat 1** | **Z-Algorithm** | Identifies periodic telemetry cycles and repeated patterns in sensor logs | $O(n + m)$ | $O(n + m)$ |
+| **Cat 1** | **Rabin-Karp** | Fast single & multi-record ID lookups via polynomial rolling hash | $O(n + m)$ avg | $O(1)$ |
+| **Cat 1** | **Aho-Corasick** | Real-time simultaneous multi-keyword tagging across activity streams | $O(n + z)$ | $O(\Sigma \cdot m)$ |
+| **Cat 2** | **Levenshtein** | Wagner-Fischer edit distance for typo tolerance in user queries | $O(n \cdot m)$ | $O(n \cdot m)$ |
+| **Cat 2** | **Damerau-Levenshtein** | Adjacent transposition-aware distance for touchscreen/keyboard typos | $O(n \cdot m)$ | $O(n \cdot m)$ |
+| **Cat 2** | **Weighted Edit Distance**| Non-uniform costs for asymmetric user data-entry errors | $O(n \cdot m)$ | $O(n \cdot m)$ |
+| **Cat 2** | **Needleman-Wunsch** | End-to-end global sequence alignment of activity streams | $O(n \cdot m)$ | $O(n \cdot m)$ |
+| **Cat 2** | **Smith-Waterman** | Local region alignment to discover common behavioral episodes | $O(n \cdot m)$ | $O(n \cdot m)$ |
+| **Cat 3** | **Suffix Array** | Lexicographical indexing of large collections of notes for fast queries | $O(n^2 \log n)$ | $O(n)$ |
+| **Cat 3** | **Kasai LCP** | Identifies recurrent phrases and clinical recommendations across records | $O(n)$ | $O(n)$ |
+| **Cat 3** | **Suffix Search** | Substring existence checks via binary search over sorted suffixes | $O(m \log n)$ | $O(1)$ |
+| **Cat 4** | **Bitmask DP** | Explores combinations of user activities subject to time & stamina budgets | $O(2^N \cdot N)$ | $O(2^N)$ |
+| **Cat 4** | **Matrix Chain Mult** | Optimizes evaluation order for multi-stage sensor processing pipelines | $O(n^3)$ | $O(n^2)$ |
 
 ---
 
 ## 7. Step-by-Step Instructions to Run the Project
 
-### Running via Terminal / Command Prompt / PowerShell
+### Running the Desktop GUI (Recommended for Final Review)
 1. Navigate to the project root directory:
    ```bash
    cd c:\Users\LUCKY\eclipse-workspace\LifeData
@@ -116,17 +119,24 @@ Conventional software approaches relying on brute-force searches or high-level l
    ```bash
    javac -d bin src/*.java
    ```
-3. Run the application:
+3. Launch the GUI Application:
    ```bash
-   java -cp bin Main
+   java -cp bin LifeDataGUI
    ```
+   *(Or run `java -cp bin Main` directly – it automatically detects the desktop environment and launches the GUI!)*
+
+### Running the Interactive Console CLI
+If you prefer running in command line terminal mode:
+```bash
+java -cp bin Main --cli
+```
 
 ### Running in Eclipse IDE
 1. Open Eclipse and choose `c:\Users\LUCKY\eclipse-workspace` as the workspace.
 2. File -> Import -> General -> Projects from Folder or Archive -> select `LifeData`.
-3. Right click `Main.java` inside the `src` folder.
+3. Right click `LifeDataGUI.java` (or `Main.java`) inside `src`.
 4. Select **Run As -> Java Application**.
-5. The console will display the interactive menu with runtime `Scanner` prompts.
+5. The Desktop GUI window will open immediately with all tabs, bar graphs, and controls.
 
 ---
 

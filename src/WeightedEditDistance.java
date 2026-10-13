@@ -13,9 +13,11 @@ public class WeightedEditDistance {
     public static class Result {
         public double totalCost;
         public double[][] dpTable;
+        public long executionTimeNs = 0;
     }
 
     public static Result compute(String s1, String s2, double insertCost, double deleteCost, double replaceCost) {
+        long startTime = System.nanoTime();
         Result res = new Result();
         if (s1 == null) s1 = "";
         if (s2 == null) s2 = "";
@@ -44,6 +46,7 @@ public class WeightedEditDistance {
 
         res.totalCost = dp[m][n];
         res.dpTable = dp;
+        res.executionTimeNs = System.nanoTime() - startTime;
         return res;
     }
 

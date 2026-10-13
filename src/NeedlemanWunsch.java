@@ -18,9 +18,11 @@ public class NeedlemanWunsch {
         public int[][] dpTable;
         public String alignedSeq1;
         public String alignedSeq2;
+        public long executionTimeNs = 0;
     }
 
     public static AlignmentResult align(String s1, String s2, int matchScore, int mismatchScore, int gapPenalty) {
+        long startTime = System.nanoTime();
         AlignmentResult res = new AlignmentResult();
         if (s1 == null) s1 = "";
         if (s2 == null) s2 = "";
@@ -72,6 +74,7 @@ public class NeedlemanWunsch {
 
         res.alignedSeq1 = aligned1.reverse().toString();
         res.alignedSeq2 = aligned2.reverse().toString();
+        res.executionTimeNs = System.nanoTime() - startTime;
         return res;
     }
 

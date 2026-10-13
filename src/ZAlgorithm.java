@@ -15,6 +15,7 @@ public class ZAlgorithm {
         public String concatenated;
         public int[] zArray;
         public List<Integer> positions = new ArrayList<>();
+        public long comparisons = 0;
         public long executionTimeNs = 0;
     }
 
@@ -23,6 +24,10 @@ public class ZAlgorithm {
      * Z[i] is the length of the longest substring starting from s[i] that is also a prefix of s.
      */
     public static int[] computeZArray(String s) {
+        return computeZArray(s, null);
+    }
+
+    public static int[] computeZArray(String s, ZResult res) {
         int n = s.length();
         int[] z = new int[n];
         int l = 0, r = 0; // [l, r] defines the current Z-box
@@ -31,8 +36,10 @@ public class ZAlgorithm {
             if (i > r) {
                 l = r = i;
                 while (r < n && s.charAt(r - l) == s.charAt(r)) {
+                    if (res != null) res.comparisons++;
                     r++;
                 }
+                if (res != null && r < n) res.comparisons++;
                 z[i] = r - l;
                 r--;
             } else {
@@ -42,8 +49,10 @@ public class ZAlgorithm {
                 } else {
                     l = i;
                     while (r < n && s.charAt(r - l) == s.charAt(r)) {
+                        if (res != null) res.comparisons++;
                         r++;
                     }
+                    if (res != null && r < n) res.comparisons++;
                     z[i] = r - l;
                     r--;
                 }
@@ -65,7 +74,7 @@ public class ZAlgorithm {
         long startTime = System.nanoTime();
         String concat = pattern + "$" + text;
         result.concatenated = concat;
-        result.zArray = computeZArray(concat);
+        result.zArray = computeZArray(concat, result);
 
         int m = pattern.length();
         for (int i = m + 1; i < concat.length(); i++) {

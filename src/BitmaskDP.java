@@ -38,12 +38,14 @@ public class BitmaskDP {
         public int maxUtility;
         public int totalTimeSpent;
         public List<Activity> selectedActivities = new ArrayList<>();
+        public long executionTimeNs = 0;
     }
 
     /**
      * Solves the constrained activity selection problem using Bitmask DP.
      */
     public static OptimizationResult optimize(List<Activity> activities, int maxTimeBudget) {
+        long startTime = System.nanoTime();
         int n = activities.size();
         int totalStates = 1 << n; // 2^N subsets
 
@@ -99,6 +101,7 @@ public class BitmaskDP {
             }
         }
 
+        result.executionTimeNs = System.nanoTime() - startTime;
         return result;
     }
 }

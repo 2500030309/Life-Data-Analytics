@@ -1,3 +1,4 @@
+import java.awt.GraphicsEnvironment;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -5,9 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Main Interactive Console Driver for LifeData Platform.
- * Fully interactive CLI with runtime Scanner input, TXT file handling,
- * and manual DSA algorithm executions for Review-1.
+ * Main Driver for LifeData Platform.
+ * Supports both modern Graphical User Interface (GUI) and Interactive CLI for Final Review.
  */
 public class Main {
 
@@ -15,12 +15,27 @@ public class Main {
     private static final List<PersonalRecord> recordList = new ArrayList<>();
 
     public static void main(String[] args) {
+        boolean forceCli = false;
+        for (String arg : args) {
+            if ("--cli".equalsIgnoreCase(arg)) {
+                forceCli = true;
+                break;
+            }
+        }
+
+        // Launch GUI by default if desktop environment is available
+        if (!forceCli && !GraphicsEnvironment.isHeadless()) {
+            System.out.println("Launching LifeData Analytics Studio GUI...");
+            LifeDataGUI.main(args);
+            return;
+        }
+
         initializeSampleRecords();
 
         boolean running = true;
         while (running) {
             printMenu();
-            System.out.print("Enter your choice (1-19): ");
+            System.out.print("Enter your choice (1-20): ");
             String choice = scanner.nextLine().trim();
 
             switch (choice) {
@@ -79,11 +94,15 @@ public class Main {
                     displayComplexityComparison();
                     break;
                 case "19":
-                    System.out.println("\nThank you for using LifeData Analytics Platform. Good luck with Review-1!");
+                    System.out.println("\nLaunching LifeData Analytics Studio GUI...");
+                    LifeDataGUI.main(new String[]{});
+                    break;
+                case "20":
+                    System.out.println("\nThank you for using LifeData Analytics Platform. Good luck with the Final Review!");
                     running = false;
                     break;
                 default:
-                    System.out.println("Invalid option. Please enter a number between 1 and 19.");
+                    System.out.println("Invalid option. Please enter a number between 1 and 20.");
             }
 
             if (running) {
@@ -117,9 +136,10 @@ public class Main {
         System.out.println(" 15. Smith-Waterman Local Alignment");
         System.out.println(" 16. Bitmask DP for Activity/Preference Selection");
         System.out.println(" 17. Matrix Chain Multiplication");
-        System.out.println("\n--- REVIEW-1 EVALUATION & BENCHMARKS ---");
+        System.out.println("\n--- FINAL REVIEW EVALUATION & BENCHMARKS ---");
         System.out.println(" 18. Compare Algorithm Complexity / Information");
-        System.out.println(" 19. Exit");
+        System.out.println(" 19. Launch Graphical User Interface (GUI Studio)");
+        System.out.println(" 20. Exit");
         System.out.println("=======================================================");
     }
 

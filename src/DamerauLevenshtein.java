@@ -13,9 +13,11 @@ public class DamerauLevenshtein {
         public int distance;
         public int[][] dpTable;
         public boolean usedTransposition;
+        public long executionTimeNs = 0;
     }
 
     public static Result compute(String s1, String s2) {
+        long startTime = System.nanoTime();
         Result res = new Result();
         if (s1 == null) s1 = "";
         if (s2 == null) s2 = "";
@@ -51,6 +53,7 @@ public class DamerauLevenshtein {
 
         res.distance = dp[m][n];
         res.dpTable = dp;
+        res.executionTimeNs = System.nanoTime() - startTime;
         return res;
     }
 
