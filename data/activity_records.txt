@@ -1,0 +1,10 @@
+[REC-101] Date: 2026-10-01 | Activity: Jogging | Category: Fitness | Note: Morning outdoor jogging for 4 km | Sensor: 148 bpm | Preference: Outdoor
+[REC-102] Date: 2026-10-01 | Activity: Meditation | Category: Mental Health | Note: Guided breathing session after work | Sensor: 64 bpm | Preference: Indoor
+[REC-103] Date: 2026-10-01 | Activity: Sleep | Category: Recovery | Note: Sleep tracker registered 8 hours uninterrupted rest | Sensor: 92 efficiency | Preference: Silent Room
+[REC-104] Date: 2026-10-02 | Activity: Walking | Category: Fitness | Note: I walked for 5000 steps and checked my health today | Sensor: 82 bpm | Preference: Outdoor
+[REC-105] Date: 2026-10-02 | Activity: Gym Training | Category: Fitness | Note: Core strength training and free weights workout | Sensor: 410 kcal | Preference: Gym
+[REC-106] Date: 2026-10-02 | Activity: Reading | Category: Leisure | Note: Read two chapters on algorithm design and data structures | Sensor: 62 bpm | Preference: Quiet Study
+[REC-107] Date: 2026-10-03 | Activity: Cycling | Category: Fitness | Note: High cadence cycling workout along hills | Sensor: 156 bpm | Preference: Outdoor Trail
+[REC-108] Date: 2026-10-03 | Activity: Yoga | Category: Flexibility | Note: Evening vinyasa yoga flow for spinal decompression | Sensor: 70 bpm | Preference: Indoor Mat
+[REC-109] Date: 2026-10-04 | Activity: Swimming | Category: Cardio | Note: 40 laps freestyle swimming session | Sensor: 520 kcal | Preference: Community Pool
+[REC-110] Date: 2026-10-04 | Activity: Deep Work | Category: Productivity | Note: Focused 90 minutes problem solving sprint | Sensor: 88 focus | Preference: Desk

@@ -1,0 +1,24 @@
+# Compiled class files
+bin/
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# Eclipse & IDE temporary files
+.metadata/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store

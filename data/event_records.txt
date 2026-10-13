@@ -1,0 +1,10 @@
+EVT-201 | 2026-10-01 07:00 | HeartRateSpike | Elevated heart rate 165 bpm during interval sprint | Level: WARNING
+EVT-202 | 2026-10-01 13:30 | MealLogEntry | Logged lunch meal with 650 calories and 40g carbohydrates | Level: INFO
+EVT-203 | 2026-10-01 22:45 | DeviceSync | Smart watch synced 8420 daily steps and battery at 78% | Level: SUCCESS
+EVT-204 | 2026-10-02 06:30 | AlarmWakeup | Smart vibration alarm triggered during light sleep stage | Level: INFO
+EVT-205 | 2026-10-02 12:15 | HydrationReminder | Drank 500 ml mineral water after notification | Level: INFO
+EVT-206 | 2026-10-02 18:00 | GlucoseAlert | Continuous glucose sensor detected rapid drop to 72 mg/dL | Level: CAUTION
+EVT-207 | 2026-10-03 08:00 | StepGoalReached | Daily target of 10000 steps reached before noon | Level: SUCCESS
+EVT-208 | 2026-10-03 15:30 | StressWarning | Galvanic skin response indicates elevated stress during exam | Level: WARNING
+EVT-209 | 2026-10-03 23:15 | DeepSleepCycle | Commenced stage 3 deep slow wave restorative sleep | Level: INFO
+EVT-210 | 2026-10-04 07:15 | WeightLog | Body weight recorded at 68.4 kg, body fat percentage 16.2% | Level: INFO
