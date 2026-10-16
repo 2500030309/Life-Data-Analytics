@@ -7,7 +7,7 @@ import java.util.*;
 
 /**
  * Main Driver for LifeData Platform.
- * Supports both modern Graphical User Interface (GUI) and Interactive CLI for Final Review.
+ * Supports both modern Graphical User Interface (GUI) and Interactive CLI.
  */
 public class Main {
 
@@ -98,7 +98,7 @@ public class Main {
                     LifeDataGUI.main(new String[]{});
                     break;
                 case "20":
-                    System.out.println("\nThank you for using LifeData Analytics Platform. Good luck with the Final Review!");
+                    System.out.println("\nThank you for using LifeData Analytics Platform!");
                     running = false;
                     break;
                 default:
@@ -136,7 +136,7 @@ public class Main {
         System.out.println(" 15. Smith-Waterman Local Alignment");
         System.out.println(" 16. Bitmask DP for Activity/Preference Selection");
         System.out.println(" 17. Matrix Chain Multiplication");
-        System.out.println("\n--- FINAL REVIEW EVALUATION & BENCHMARKS ---");
+        System.out.println("\n--- SYSTEM EVALUATION & BENCHMARKS ---");
         System.out.println(" 18. Compare Algorithm Complexity / Information");
         System.out.println(" 19. Launch Graphical User Interface (GUI Studio)");
         System.out.println(" 20. Exit");
@@ -404,7 +404,7 @@ public class Main {
             System.out.printf("%-16s | %-11d | %s%n", kw, pos.size(), pos.isEmpty() ? "None" : pos.toString());
         }
 
-        System.out.println("\n[VIVA NOTE] Aho-Corasick processes all keywords simultaneously in O(n + matches)");
+        System.out.println("\n[NOTE] Aho-Corasick processes all keywords simultaneously in O(n + matches)");
         System.out.println("without scanning the text multiple times.");
     }
 
@@ -478,7 +478,7 @@ public class Main {
 
         String longestRepeated = KasaiLCP.getLongestRepeatedSubstring(text, suffixArray, lcp);
         System.out.println("\nLongest Repeated Substring / Phrase: \"" + longestRepeated + "\"");
-        System.out.println("[VIVA NOTE] Kasai's algorithm runs in O(n) linear time because the match pointer");
+        System.out.println("[NOTE] Kasai's algorithm runs in O(n) linear time because the match pointer");
         System.out.println("decrements at most once per suffix.");
     }
 
@@ -537,7 +537,7 @@ public class Main {
             System.out.println("  * " + step);
         }
 
-        System.out.println("\n[VIVA NOTE] Allowed operations: Insertion (+1), Deletion (+1), Replacement (+1).");
+        System.out.println("\n[NOTE] Allowed operations: Insertion (+1), Deletion (+1), Replacement (+1).");
         System.out.println("Time Complexity: O(n * m) | Space Complexity: O(n * m)");
     }
 
@@ -567,7 +567,7 @@ public class Main {
         System.out.println("Standard Levenshtein Distance  = " + standardLev.distance);
         System.out.println("Transposition detected: " + res.usedTransposition);
 
-        System.out.println("\n[VIVA NOTE] Adjacent transposition (swapping adjacent characters like 'or' -> 'ro')");
+        System.out.println("\n[NOTE] Adjacent transposition (swapping adjacent characters like 'or' -> 'ro')");
         System.out.println("is counted as 1 operation in Damerau-Levenshtein, whereas standard Levenshtein counts it as 2.");
     }
 
@@ -605,7 +605,7 @@ public class Main {
         WeightedEditDistance.printTable(s1, s2, res.dpTable);
 
         System.out.printf("%nMinimum Weighted Edit Distance = %.2f%n", res.totalCost);
-        System.out.println("[VIVA NOTE] Weighted edit distance allows custom penalties for non-uniform data errors.");
+        System.out.println("[NOTE] Weighted edit distance allows custom penalties for non-uniform data errors.");
     }
 
     // =========================================================================
@@ -632,7 +632,7 @@ public class Main {
         System.out.println("\nFinal Global Alignment Score = " + res.score);
         System.out.println("Aligned Sequence 1: " + res.alignedSeq1);
         System.out.println("Aligned Sequence 2: " + res.alignedSeq2);
-        System.out.println("\n[VIVA NOTE] Performs global end-to-end alignment using dynamic programming.");
+        System.out.println("\n[NOTE] Performs global end-to-end alignment using dynamic programming.");
     }
 
     // =========================================================================
@@ -659,7 +659,7 @@ public class Main {
         System.out.println("\nMaximum Local Alignment Score = " + res.maxScore);
         System.out.println("Local Aligned Substring 1: " + res.alignedSeq1);
         System.out.println("Local Aligned Substring 2: " + res.alignedSeq2);
-        System.out.println("\n[VIVA NOTE] Performs local alignment by clamping negative matrix values to 0.");
+        System.out.println("\n[NOTE] Performs local alignment by clamping negative matrix values to 0.");
     }
 
     // =========================================================================
@@ -698,7 +698,7 @@ public class Main {
             System.out.println("  * " + a.name + " (" + a.timeMinutes + " mins, +" + a.utilityValue + " utility)");
         }
 
-        System.out.println("\n[VIVA NOTE] Bitmask DP models state subsets as binary integers in O(2^N * N).");
+        System.out.println("\n[NOTE] Bitmask DP models state subsets as binary integers in O(2^N * N).");
     }
 
     // =========================================================================
@@ -741,7 +741,7 @@ public class Main {
             System.out.printf("Computational Saving:          %.2f%%%n", speedup);
         }
 
-        System.out.println("\n[VIVA NOTE] MCM uses Interval DP with O(n^3) time complexity to optimize");
+        System.out.println("\n[NOTE] MCM uses Interval DP with O(n^3) time complexity to optimize");
         System.out.println("the evaluation order of multi-stage sensor transformation pipelines.");
     }
 
@@ -769,7 +769,7 @@ public class Main {
         System.out.printf("%-18s | %-26s | %-16s | %-16s%n", "Bitmask DP", "Daily activity optimizer", "O(2^N * N)", "O(2^N)");
         System.out.printf("%-18s | %-26s | %-16s | %-16s%n", "Matrix Chain", "Data pipeline optimizer", "O(n^3)", "O(n^2)");
         System.out.println("=========================================================================================");
-        System.out.println("* Note: Suffix array uses comparison-based sorting for clean, beginner-friendly viva explanation.");
+        System.out.println("* Note: Suffix array uses comparison-based sorting for clean, beginner-friendly explanation.");
     }
 }
 
